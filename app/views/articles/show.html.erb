@@ -1,0 +1,14 @@
+<div class="d-flex justify-content-between">
+  <h2><%= @article.title %></h2>
+  <div class="mx-4">
+    <%= link_to edit_article_path do %>
+        <button class="btn btn-primary">Edit</button>
+     <% end %>
+     <%= link_to article_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+        <button class="btn btn-danger">Delete</button>
+     <% end %>
+  </div>
+</div>
+
+<p><%= @article.content %></p>
+<%= link_to 'Back to list', articles_path %>
